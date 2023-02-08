@@ -79,7 +79,6 @@ const base64Image = async (filename: string): Promise<string> => {
 };
 
 const bottomImg = await base64Image("./bottom-img.png");
-const logoImg = await base64Image("./logo.png");
 
 const template = (
   <div style={{ display: "flex", flexWrap: "wrap", margin: "2em 4em", position: "relative" }}>
