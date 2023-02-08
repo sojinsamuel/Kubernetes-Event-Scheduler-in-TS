@@ -90,13 +90,11 @@ const template = (
     }}
   >
     <img
-      width="34"
-      height="500"
+      width="1200"
+      height="630"
       src={bottomImg}
       style={{
         position: "absolute",
-        width: "100vw",
-        height: "10vh",
         bottom: 0,
       }}
     />
@@ -111,7 +109,7 @@ const template = (
             whiteSpace: "pre-wrap",
           }}
         >
-          {date} -{" "}
+          {date},{" "}
           <a href="#" style={{ color: "blue" }}>
             {title.length > 50 ? title.slice(0, 50) + "..." : title}
           </a>{" "}
