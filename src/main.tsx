@@ -106,8 +106,8 @@ const template = (
         <h2 key={title} style={{ display: "flex", wordBreak: "break-all" }}>
           {date} -{" "}
           <a href="#" style={{ color: "blue" }}>
-            {title}
-          </a>{" "}
+            {title.slice(0, 50)}...
+          </a>
           | {host} - {type}
         </h2>
       ))}
