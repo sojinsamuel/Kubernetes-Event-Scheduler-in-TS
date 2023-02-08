@@ -85,7 +85,7 @@ const template = (
     style={{
       display: "flex",
       flexWrap: "wrap",
-      margin: "2em 4em",
+      padding: "1em 2em",
       position: "relative",
     }}
   >
@@ -128,7 +128,7 @@ const svg = await satori(template, {
 });
 
 const resvg = new Resvg(svg, {
-  background: "rgba(241,244,249,255)",
+  background: "rgba(247,249,252,255)",
 });
 const pngData = resvg.render();
 const pngBuffer = pngData.asPng();
