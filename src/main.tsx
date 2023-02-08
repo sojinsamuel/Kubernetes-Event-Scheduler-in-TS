@@ -103,11 +103,18 @@ const template = (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <h1>Kubernetes Events starting in the next 24 hours:</h1>
       {events.map(({ title, date, host, type }) => (
-        <h2 key={title} style={{ display: "flex", wordBreak: "break-all" }}>
+        <h2
+          key={title}
+          style={{
+            display: "flex",
+            wordBreak: "break-all",
+            whiteSpace: "pre-wrap",
+          }}
+        >
           {date} -{" "}
           <a href="#" style={{ color: "blue" }}>
             {title.length > 50 ? title.slice(0, 50) + "..." : title}
-          </a>
+          </a>{" "}
           | {host} - {type}
         </h2>
       ))}
