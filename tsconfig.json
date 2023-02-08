@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ES2017",
+    "jsx": "react",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "moduleResolution":"node",
+  },
+  "ts-node": {
+    "esm": true
+},
+
+  "include": ["src/**/*.tsx", "src/main.tsx"],
+  "exclude": ["node_modules"]
+}
