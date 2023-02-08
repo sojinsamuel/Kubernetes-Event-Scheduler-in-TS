@@ -1,7 +1,7 @@
-import React from "react"
+import React from "react";
 import { readFile, writeFile } from "fs/promises";
 import { Resvg } from "@resvg/resvg-js";
-import satori from "satori"
+import satori from "satori";
 
 const events = [
   {
@@ -81,17 +81,37 @@ const base64Image = async (filename: string): Promise<string> => {
 const bottomImg = await base64Image("./bottom-img.png");
 
 const template = (
-  <div style={{ display: "flex", flexWrap: "wrap", margin: "2em 4em", position: "relative" }}>
-    <img width="34" height="500" src={bottomImg} style={{ position: "absolute", width: "100%", bottom: 0 }} />
+  <div
+    style={{
+      display: "flex",
+      flexWrap: "wrap",
+      margin: "2em 4em",
+      position: "relative",
+    }}
+  >
+    <img
+      width="34"
+      height="500"
+      src={bottomImg}
+      style={{
+        position: "absolute",
+        width: "100vw",
+        height: "10vh",
+        bottom: 0,
+      }}
+    />
     <div style={{ display: "flex", flexDirection: "column" }}>
       <h1>Kubernetes Events starting in the next 24 hours:</h1>
       {events.map(({ title, date, host, type }) => (
         <h2 key={title} style={{ display: "flex", wordBreak: "break-all" }}>
-          {date} - <a href="#" style={{ color: "blue" }}>{title}</a> | {host} - {type}
+          {date} -{" "}
+          <a href="#" style={{ color: "blue" }}>
+            {title}
+          </a>{" "}
+          | {host} - {type}
         </h2>
       ))}
     </div>
-
   </div>
 );
 
