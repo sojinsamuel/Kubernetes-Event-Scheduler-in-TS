@@ -78,7 +78,9 @@ const base64Image = async (filename: string): Promise<string> => {
   return `data:image/png;base64,${file}`;
 };
 
-const bottomImg = await base64Image("./bottom-img.png");
+const bottomImg = await base64Image("./bottom-img.png").catch((error) => {
+  console.error(error);
+});
 
 const template = (
   <div
@@ -89,15 +91,17 @@ const template = (
       position: "relative",
     }}
   >
-    <img
-      width="1200"
-      height="630"
-      src={bottomImg}
-      style={{
-        position: "absolute",
-        bottom: 0,
-      }}
-    />
+    {bottomImg ? (
+      <img
+        width="1200"
+        height="630"
+        src={bottomImg}
+        style={{
+          position: "absolute",
+          bottom: 0,
+        }}
+      />
+    ) : null}
     <div style={{ display: "flex", flexDirection: "column" }}>
       <h1>Kubernetes Events starting in the next 24 hours:</h1>
       {events.map(({ title, date, host, type }) => (
