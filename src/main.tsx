@@ -91,18 +91,13 @@ const template = (
       position: "relative",
     }}
   >
-    {bottomImg ? (
-      <img
-        width="1200"
-        height="630"
-        src={bottomImg}
-        style={{
-          position: "absolute",
-          bottom: 0,
-        }}
-      />
-    ) : null}
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        marginBottom: "130px",
+      }}
+    >
       <h1>Kubernetes Events starting in the next 24 hours:</h1>
       {events.map(({ title, date, host, type }) => (
         <h2
@@ -121,6 +116,18 @@ const template = (
         </h2>
       ))}
     </div>
+    {bottomImg ? (
+      <img
+        width="1200"
+        height="630"
+        src={bottomImg}
+        style={{
+          position: "absolute",
+          bottom: 0,
+          zIndex: -5,
+        }}
+      />
+    ) : null}
   </div>
 );
 
